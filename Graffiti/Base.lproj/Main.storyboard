@@ -1,27 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="Graffiti" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O21-V6-Zwd" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRj-A0-nVi">
+                                <rect key="frame" x="176" y="563" width="22" height="22"/>
+                                <connections>
+                                    <action selector="addNewTextTrigger:" destination="BV1-FR-VrT" eventType="touchUpInside" id="edp-XT-wYq"/>
+                                </connections>
+                            </button>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyD-CY-WYx">
+                                <rect key="frame" x="16" y="79" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="0.90000000000000002" height="0.90000000000000002"/>
+                        <constraints>
+                            <constraint firstItem="fyD-CY-WYx" firstAttribute="leading" secondItem="DBb-8T-M7l" secondAttribute="leading" constant="16" id="D3x-aI-Un1"/>
+                            <constraint firstItem="DBb-8T-M7l" firstAttribute="bottom" secondItem="TRj-A0-nVi" secondAttribute="bottom" constant="82" id="HVn-E8-fAf"/>
+                            <constraint firstItem="fyD-CY-WYx" firstAttribute="top" secondItem="DBb-8T-M7l" secondAttribute="top" constant="59" id="Qcq-U1-MjC"/>
+                            <constraint firstItem="fyD-CY-WYx" firstAttribute="centerX" secondItem="DBb-8T-M7l" secondAttribute="centerX" id="oKC-q1-hLY"/>
+                            <constraint firstItem="TRj-A0-nVi" firstAttribute="centerX" secondItem="DBb-8T-M7l" secondAttribute="centerX" id="rGd-B4-XXL"/>
+                            <constraint firstItem="DBb-8T-M7l" firstAttribute="trailing" secondItem="fyD-CY-WYx" secondAttribute="trailing" constant="16" id="xzO-PO-PUi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DBb-8T-M7l"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="addNewTextButton" destination="TRj-A0-nVi" id="DTr-wX-MeC"/>
+                        <outlet property="newTextBar" destination="fyD-CY-WYx" id="og8-eD-0Ql"/>
+                        <outlet property="sceneView" destination="O21-V6-Zwd" id="6zB-Fx-xyp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="99.400299850074973"/>
         </scene>
     </scenes>
 </document>
